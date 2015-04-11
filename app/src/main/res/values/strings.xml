@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">City Pet Finder</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_lost_pet">Lost Pet Menu</string>
+    <string name="title_activity_lost_pet_list">My Lost Pets</string>
+    <string name="title_activity_lost_pet_view">LostPetView</string>
+</resources>

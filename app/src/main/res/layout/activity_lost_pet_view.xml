@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+
+    tools:context="net.amatola.citypetfinder.LostPetViewActivity">
+
+    <!--android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"-->
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:indeterminate="true"
+        android:visibility="invisible"
+        android:id="@+id/progressBar2"
+        android:layout_weight="0" />
+
+    <TextView
+        android:id="@+id/petName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progressBar2" />
+
+    <TextView
+        android:id="@+id/petBreed"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/petName"/>
+
+</RelativeLayout>
