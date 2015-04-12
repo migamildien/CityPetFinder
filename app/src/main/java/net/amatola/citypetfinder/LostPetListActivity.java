@@ -86,6 +86,9 @@ public class LostPetListActivity extends Activity {
             case R.id.action_refresh:
                 refresh();
                 return true;
+            case R.id.action_new:
+                Intent intent = new Intent(LostPetListActivity.this, LostPetAddActivity.class);
+                startActivity(intent);
             case R.id.action_settings:
                 return true;
             default:

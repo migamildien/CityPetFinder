@@ -15,6 +15,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends Activity {
 
+    private final static String mUrl = "http://citypetfinderwebapi.azurewebsites.net/api/LostPet";
+
     private final int ACCOUNT = 0;
     private final int LOST_PETS = 1;
 

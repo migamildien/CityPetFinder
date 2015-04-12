@@ -43,6 +43,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="net.amatola.citypetfinder.LostPetListActivity" />
         </activity>
+        <activity
+            android:name=".LostPetAddActivity"
+            android:label="@string/title_activity_lost_pet_add"
+            android:parentActivityName=".LostPetListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="net.amatola.citypetfinder.LostPetListActivity" />
+        </activity>
     </application>
 
 </manifest>
