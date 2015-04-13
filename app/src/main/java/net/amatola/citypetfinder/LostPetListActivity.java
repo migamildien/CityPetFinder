@@ -33,11 +33,9 @@ public class LostPetListActivity extends Activity {
 
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-            Intent i = new Intent(LostPetListActivity.this, LostPetViewActivity.class);
-            TextView petName = (TextView)findViewById(R.id.petName);
-            i.putExtra(LOST_PET_ID, Integer.valueOf(petName.getTag().toString()));
-            startActivity(i);
+            Intent intent = new Intent(LostPetListActivity.this, LostPetViewActivity.class);
+            intent.putExtra(LOST_PET_ID, (int)id);
+            startActivity(intent);
 
         }
     };

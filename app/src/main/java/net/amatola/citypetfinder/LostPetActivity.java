@@ -16,16 +16,28 @@ import java.util.ArrayList;
 public class LostPetActivity extends Activity {
 
     private final int MY_LOST_PETS = 0;
-    private final int SEARCH_LOST_PETS = 1;
-    private final int RAO_CONTACT_LIST = 2;
+    private final int ADD_LOST_PET = 1;
+    private final int SEARCH_LOST_PETS = 2;
+    private final int RAO_CONTACT_LIST = 3;
 
     AdapterView.OnItemClickListener myItemClickListener = new AdapterView.OnItemClickListener() {
 
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            if (id == MY_LOST_PETS) {
-                Intent i = new Intent(LostPetActivity.this, LostPetListActivity.class);
-                startActivity(i);
+
+            Intent intent = null;
+            int index = (int)id;
+
+            switch (index) {
+                case MY_LOST_PETS:
+                    intent = new Intent(LostPetActivity.this, LostPetListActivity.class);
+                    startActivity(intent);
+                    break;
+                case ADD_LOST_PET:
+                    intent = new Intent(LostPetActivity.this, LostPetAddActivity.class);
+                    startActivity(intent);
+                    break;
+                default:
             }
         }
     };
@@ -38,6 +50,7 @@ public class LostPetActivity extends Activity {
         final ArrayList<String> list = new ArrayList<String>();
 
         list.add("My Lost Pets");
+        list.add("Add a lost pet");
         list.add("Search Lost Pet");
         list.add("RAO Contact List");
 

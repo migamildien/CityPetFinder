@@ -78,34 +78,24 @@ public class LostPetAddActivity extends Activity {
         EditText breed = (EditText)findViewById(R.id.breed);
         EditText primaryColour = (EditText)findViewById(R.id.primaryColour);
 
-        /*
-        todo use gson
-        LostPet lostPet = new LostPet();
-
-        lostPet.setPetName(petName.getText().toString());
-        lostPet.setPetType(petType.getText().toString());
-        lostPet.setGender(gender.getText().toString());
-        lostPet.setBreed(breed.getText().toString());
-        lostPet.setPrimaryColour(primaryColour.getText().toString());*/
-
         JSONObject jsonObject = new JSONObject();
 
         try {
-            jsonObject.put("LostPetId", JSONObject.NULL);
+            //jsonObject.put("LostPetId", JSONObject.NULL);
             jsonObject.put("PetName", petName.getText().toString());
             jsonObject.put("PetType", petType.getText().toString());
             jsonObject.put("Gender", gender.getText().toString());
             jsonObject.put("Breed", breed.getText().toString());
-            jsonObject.put("CrossBreed", JSONObject.NULL);
-            jsonObject.put("Size", JSONObject.NULL);
+            //jsonObject.put("CrossBreed", JSONObject.NULL);
+            //jsonObject.put("Size", JSONObject.NULL);
             jsonObject.put("PrimaryColour", primaryColour.getText().toString());
-            jsonObject.put("SecondaryColour", JSONObject.NULL);
-            jsonObject.put("MicrochipNumber", JSONObject.NULL);
-            jsonObject.put("MissingSinceDate", JSONObject.NULL);
-            jsonObject.put("SuburbLost", JSONObject.NULL);
-            jsonObject.put("OtherDescription", JSONObject.NULL);
-            jsonObject.put("ImageThumbnailUrl", JSONObject.NULL);
-            jsonObject.put("ImageUrl", JSONObject.NULL);
+            //jsonObject.put("SecondaryColour", JSONObject.NULL);
+            //jsonObject.put("MicrochipNumber", JSONObject.NULL);
+            //jsonObject.put("MissingSinceDate", JSONObject.NULL);
+            //jsonObject.put("SuburbLost", JSONObject.NULL);
+            //jsonObject.put("OtherDescription", JSONObject.NULL);
+            //jsonObject.put("ImageThumbnailUrl", JSONObject.NULL);
+            //jsonObject.put("ImageUrl", JSONObject.NULL);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -118,24 +108,7 @@ public class LostPetAddActivity extends Activity {
                         //Log.d(TAG, response.toString());
                         //hidePDialog();
 
-                        // Parsing json
-                        try {
-
-                            TextView petName = (TextView) findViewById(R.id.petName);
-                            TextView petBreed = (TextView) findViewById(R.id.petBreed);
-
-                            petName.setText(response.getString("PetName"));
-                            petBreed.setText(response.getString("Breed"));
-
-                            /* todo use Gson
-                            LostPet lostPet = new LostPet();
-                            lostPet.setImageThumbnailUrl(response.getString("ImageThumbnailUrl"));
-                            lostPet.setPetName(response.getString("PetName"));
-                            lostPet.setBreed(response.getString("Breed"));*/
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                        Toast.makeText(getApplicationContext(), "Lost pet saved", Toast.LENGTH_SHORT).show();
 
                         mProgressBar.setVisibility(View.INVISIBLE);
 
@@ -166,14 +139,14 @@ public class LostPetAddActivity extends Activity {
                 params.put("XML", editText3.getText().toString());
 
                 return params;
-            }*/
+            }
 
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String,String> params = new HashMap<String, String>();
-                params.put("Content-Type","application/json; charset=utf-8");
+                params.put("Content-Type","application/json");
             return params;
-        }
+        }*/
         };
 
         AppController.getInstance().addToRequestQueue(request);
